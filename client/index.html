@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testes</title>
+    <style>
+        body{
+            background: linear-gradient(150deg, rgba(0, 0, 255, 0.432), rgba(255, 115, 0, 0.548));
+            background-repeat: no-repeat;
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
+        }
+        form{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 30px;
+            border-radius: 15px;
+            background-color: rgba(130, 32, 221, 0.2);
+            text-align: center;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+        form input,label{
+            margin: 5px 0;
+        }
+        input{
+            background: transparent;
+        }
+        .button{
+            margin-top: 20px;
+            cursor: pointer;
+            background-color:cadetblue;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <form action="/send" method="post">
+        
+        <label for="username">Username:</label><br>
+            <input type="text" name="username" id="username" required><br>
+
+        <label for="nome">Seu nome:</label><br>
+            <input type="text" name="nome" id="nome" required><br>
+
+        <label for="email">Seu melhor Email:</label><br>
+            <input type="email" name="email" id="email" required><br>
+
+        <label for="contact">Contato:</label><br>
+            <input type="text" name="contact" id="contact" required><br>
+
+        <label for="pass">Sua melhor senha:</label><br>
+            <input type="password" name="pass" id="pass" required><br>
+
+        <label for="show" style="cursor: pointer;">Mostrar Senha</label>
+            <input onclick="mostrarpass()" type="checkbox" name="show" id="show" style="cursor: pointer"><br>
+
+            <input type="reset" value="Limpar" class="button">
+            <input type="submit" value="Enviar" class="button">
+    </form>
+
+
+
+
+
+    <script>
+        function mostrarpass(){
+            let senha = document.querySelector('#pass')
+            senha.type == 'password' ? senha.type = 'text':senha.type = 'password';
+        }
+        
+    </script>
+</body>
+</html>
