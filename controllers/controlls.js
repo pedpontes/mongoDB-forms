@@ -16,7 +16,8 @@ const findName = async (req,res) => {
 
 const cadastro = async (req,res) => {
     let query = req.body
-    let find = await Person.findOne({email: query.email, username: query.username})
+    let find = await Person.findOne({$or: [{email: query.email},{username: query.username}]})
+    
     if(find){
         res.json({valid: 0})
     }
